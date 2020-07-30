@@ -1,5 +1,5 @@
 const User = require('../Models/User')
-const bcrypt = require('bcryptjs')
+//const bcrypt = require('bcryptjs')
 
 async function hashPassword(password) {
     try {
@@ -25,7 +25,7 @@ module.exports = {
             const userAlreadyExists = await User.findOne({ email })
             if (userAlreadyExists) return res.status(400).send({ message: 'User already exists' })
 
-            const hashedPassword = await hashPassword(password)
+            const hashedPassword = password //await hashPassword(password)
 
             const createdUser = await User.create({
                 name,
