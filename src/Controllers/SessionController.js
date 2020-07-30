@@ -1,5 +1,5 @@
 const User = require('../Models/User')
-const brcypt = require('bcrypt')
+const brcypt = require('bcrypt-nodejs')
 
 module.exports = {
     async create(req, res) {
